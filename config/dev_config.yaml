@@ -1,0 +1,33 @@
+# Development Environment Configuration
+
+project:
+  name: "retailpulse-data-platform"
+  version: "1.0.0"
+  environment: "development"
+
+# Override base configuration for development
+data:
+  root: "./data"
+  raw: "./data/raw"
+  bronze: "./data/bronze"
+  silver: "./data/silver"
+  gold: "./data/gold"
+  quarantine: "./data/quarantine"
+  incoming: "./data/incoming"
+
+api:
+  base_url: "http://localhost:5000"
+  timeout: 60
+  max_retries: 5
+  retry_delay: 2
+
+spark:
+  executor_memory: "1g"
+  driver_memory: "512m"
+  sql_shuffle_partitions: 100
+  dynamic_allocation:
+    enabled: false
+
+logging:
+  level: "DEBUG"
+  file: "./logs/retailpulse_dev.log"

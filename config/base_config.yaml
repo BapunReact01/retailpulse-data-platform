@@ -1,0 +1,68 @@
+# Base Configuration for RetailPulse Data Platform
+
+project:
+  name: "retailpulse-data-platform"
+  version: "1.0.0"
+  environment: "base"
+
+# Data Paths
+data:
+  root: "/opt/airflow/data"
+  raw: "/opt/airflow/data/raw"
+  bronze: "/opt/airflow/data/bronze"
+  silver: "/opt/airflow/data/silver"
+  gold: "/opt/airflow/data/gold"
+  quarantine: "/opt/airflow/data/quarantine"
+  incoming: "/opt/airflow/data/incoming"
+
+# API Configuration
+api:
+  base_url: "http://mock-api:5000"
+  timeout: 30
+  max_retries: 3
+  retry_delay: 5
+
+# PostgreSQL Configuration
+postgres:
+  operational:
+    host: "postgres_ops"
+    port: 5432
+    database: "retail_ops"
+    user: "retail_user"
+  warehouse:
+    host: "postgres_dw"
+    port: 5432
+    database: "retail_dw"
+    user: "retail_user"
+
+# Spark Configuration
+spark:
+  app_name: "RetailPulse"
+  master: "spark://spark-master:7077"
+  executor_memory: "2g"
+  driver_memory: "1g"
+  sql_shuffle_partitions: 200
+  dynamic_allocation:
+    enabled: true
+    min_executors: 1
+    max_executors: 10
+    initial_executors: 2
+
+# Airflow Configuration
+airflow:
+  dags_folder: "/opt/airflow/dags"
+  plugins_folder: "/opt/airflow/plugins"
+  logs_folder: "/opt/airflow/logs"
+
+# Data Quality Configuration
+data_quality:
+  max_null_percentage: 5.0
+  max_duplicate_percentage: 1.0
+  iqr_multiplier: 3.0
+  quarantine_enabled: true
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "/opt/airflow/logs/retailpulse.log"
