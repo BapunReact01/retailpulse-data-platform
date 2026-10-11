@@ -50,6 +50,25 @@ services:
       timeout: 5s
       retries: 5
 
+  mock_api:
+    image: python:3.11-slim
+    container_name: retailpulse-mock-api
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mock_api:/app
+      - ./requirements.txt:/app/requirements.txt
+    working_dir: /app
+    command: >
+      sh -c "pip install flask flask-cors -q && python app.py"
+    networks:
+      - retailpulse_network
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:5000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
 volumes:
   postgres_ops_data:
   postgres_dw_data:
