@@ -32,3 +32,8 @@ colorlog==6.8.0
 
 # Utilities
 cryptography==41.0.7
+# Code Quality
+flake8==6.1.0
+black==23.12.1
+isort==5.13.2
+mypy==1.8.0
