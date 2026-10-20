@@ -1,7 +1,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, when, sum as _sum, count as _count, avg
-from pyspark.utils.spark_utils import SparkUtils
-from pyspark.utils.silver_utils import SilverUtils
+from retailpyspark.utils.spark_utils import SparkUtils
+from retailpyspark.utils.silver_utils import SilverUtils
 import os
 
 

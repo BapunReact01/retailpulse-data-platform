@@ -4,9 +4,9 @@ import sys
 # Add project root to path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from pyspark.jobs.bronze.bronze_api import BronzeAPIJob
-from pyspark.jobs.bronze.bronze_csv import BronzeCSVJob
-from pyspark.jobs.bronze.bronze_postgres import BronzePostgresJob
+from retailpyspark.jobs.bronze.bronze_api import BronzeAPIJob
+from retailpyspark.jobs.bronze.bronze_csv import BronzeCSVJob
+from retailpyspark.jobs.bronze.bronze_postgres import BronzePostgresJob
 
 
 def test_bronze_api():

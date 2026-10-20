@@ -1,7 +1,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, sum as _sum, count as _count, avg, year, month, dayofmonth
-from pyspark.utils.spark_utils import SparkUtils
-from pyspark.utils.gold_utils import GoldUtils
+from retailpyspark.utils.spark_utils import SparkUtils
+from retailpyspark.utils.gold_utils import GoldUtils
 import os
 
 

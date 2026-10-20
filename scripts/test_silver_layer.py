@@ -4,9 +4,9 @@ import sys
 # Add project root to path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from pyspark.jobs.silver.silver_customers import SilverCustomersJob
-from pyspark.jobs.silver.silver_products import SilverProductsJob
-from pyspark.jobs.silver.silver_sales import SilverSalesJob
+from retailpyspark.jobs.silver.silver_customers import SilverCustomersJob
+from retailpyspark.jobs.silver.silver_products import SilverProductsJob
+from retailpyspark.jobs.silver.silver_sales import SilverSalesJob
 
 
 def test_silver_customers():

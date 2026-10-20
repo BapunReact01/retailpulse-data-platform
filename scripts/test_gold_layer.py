@@ -4,10 +4,10 @@ import sys
 # Add project root to path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from pyspark.jobs.gold.gold_sales import GoldSalesJob
-from pyspark.jobs.gold.gold_customers import GoldCustomersJob
-from pyspark.jobs.gold.gold_products import GoldProductsJob
-from pyspark.jobs.gold.gold_stores import GoldStoresJob
+from retailpyspark.jobs.gold.gold_sales import GoldSalesJob
+from retailpyspark.jobs.gold.gold_customers import GoldCustomersJob
+from retailpyspark.jobs.gold.gold_products import GoldProductsJob
+from retailpyspark.jobs.gold.gold_stores import GoldStoresJob
 
 
 def test_gold_sales():

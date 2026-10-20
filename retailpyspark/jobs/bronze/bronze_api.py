@@ -1,6 +1,6 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col
-from pyspark.utils.spark_utils import SparkUtils
+from retailpyspark.utils.spark_utils import SparkUtils
 import json
 import os
 
